@@ -1,0 +1,7 @@
+pod "SPSound+TimeEvents", :path => "../SPSound+TimeEvents.podspec"
+
+target "Demo" do
+end
+
+target "DemoTests" do
+end
