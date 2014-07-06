@@ -4,8 +4,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SPSoundChannel.h"
+#import "SXTimeEvents.h"
 
-@interface SPSoundChannel (TimeEvents)
-
+@interface SPSoundChannel (TimeEvents) <SXTimeEvents>
 
 @end

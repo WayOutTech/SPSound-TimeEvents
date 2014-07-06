@@ -7,32 +7,28 @@
 Pod::Spec.new do |s|
   s.name             = "SPSound+TimeEvents"
   s.version          = "0.0.1"
-  s.summary          = "A short description of SPSound+TimeEvents."
-  s.description      = <<-DESC
-                       An optional longer description of SPSound+TimeEvents
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "http://EXAMPLE/NAME"
-  s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.summary          = "A Sparrow extension for adding seek/event control to the Sparrow-Framework sound system."
   s.license          = 'MIT'
   s.author           = { "Johnathan Raymond" => "johnathan.raymond@wayouttech.com" }
-  s.source           = { :git => "http://EXAMPLE/NAME.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/NAME'
-
-  # s.platform     = :ios, '5.0'
-  # s.ios.deployment_target = '5.0'
-  # s.osx.deployment_target = '10.7'
+  s.source           = { :git => "https://github.com/WayOutTech/SPSound-TimeEvents.git", :tag => s.version.to_s }
+  s.platform         = :ios, '5.0'
+  s.homepage         = 'http://wayouttech.com'
   s.requires_arc = true
 
   s.source_files = 'Classes/**/*.{h,m}'
+  s.exclude_files = 'Classes/**/TPPreciseTimer.{h,m}'
   s.resources = 'Assets'
 
   s.ios.exclude_files = 'Classes/osx'
   s.osx.exclude_files = 'Classes/ios'
-  # s.public_header_files = 'Classes/**/*.h'
-  # s.frameworks = 'SomeFramework', 'AnotherFramework'
-  # s.dependency 'JSONKit', '~> 1.4
+
+  s.subspec 'TPPreciseTimer' do |timer|
+      timer.source_files = 'Classes/**/TPPreciseTimer.{h,m}',
+      timer.ios.exclude_files = 'Classes/osx'
+      timer.osx.exclude_files = 'Classes/ios'
+      timer.requires_arc = false
+  end
+
   s.dependency 'Sparrow-Framework', '2.0.1'
+
 end
