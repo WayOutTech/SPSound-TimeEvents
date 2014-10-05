@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "SPSound+TimeEvents"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.summary          = "A Sparrow extension for adding seek/event control to the Sparrow-Framework sound system."
   s.license          = 'MIT'
   s.author           = { "Johnathan Raymond" => "johnathan.raymond@wayouttech.com" }
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
       timer.requires_arc = false
   end
 
-  s.dependency 'Sparrow-Framework', '2.0.1'
+  s.dependency 'Sparrow', '2.1'
 
 end
